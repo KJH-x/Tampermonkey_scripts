@@ -1,4 +1,4 @@
-# CHAT JS
+# CHAT about JS
 
 ## CHAT ROUND 1
 
