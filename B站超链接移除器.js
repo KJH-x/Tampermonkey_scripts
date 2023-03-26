@@ -21,7 +21,7 @@
             link.parentNode.replaceChild(textNode, link);
 
             // Log the action in the console
-            console.log(`Removed label "${label}" from link`);
+            console.log(`ChatGPT: Removed label "${label}" from link`);
         } catch (err) {
         }
     }
@@ -31,7 +31,7 @@
         searchIcons.forEach(searchIcon => {
             // Remove the search icon
             searchIcon.remove();
-            console.log(`Removed search icon`);
+            console.log(`ChatGPT: Removed search icon`);
         });
     }
 
