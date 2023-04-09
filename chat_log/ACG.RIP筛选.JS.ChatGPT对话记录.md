@@ -1,17 +1,14 @@
----
-title: ACG RIP Size Highlighter.
-source: https://chat.openai.com/chat/1b8d5bce-83ae-4227-aff6-9b236b6f4a34
----
+# ACG RIP Size Highlighter
 
-# ACG RIP Size Highlighter.
+## You
 
-#### You:
 写一个tampermonkey的脚本，用Javascript语言：
-匹配：http://acg.rip/*；https://acg.rip/*
+匹配：<http://acg.rip/*；https://acg.rip/*>
 在页面加载完全后、在页面开始动态加载后，执行：
 搜索所有<td class="size">，如果其正文中含有`GB`，将其格式变为：红色加粗高亮
 
-#### ChatGPT:
+## ChatGPT
+
 以下是一个可以实现您要求的Tampermonkey脚本：
 
 ```javascript
@@ -54,11 +51,12 @@ source: https://chat.openai.com/chat/1b8d5bce-83ae-4227-aff6-9b236b6f4a34
 
 要使用这个脚本，您需要在浏览器中安装Tampermonkey插件，并将以上代码复制到Tampermonkey的新脚本编辑器中。
 
+## You
 
-#### You:
 亮红色过于刺眼，改为#78082a
 
-#### ChatGPT:
+## ChatGPT
+
 当然，您可以将脚本中的红色颜色代码改为#78082a或其他您喜欢的颜色代码，来符合您的需求。以下是修改后的代码：
 
 ```javascript
@@ -99,12 +97,13 @@ source: https://chat.openai.com/chat/1b8d5bce-83ae-4227-aff6-9b236b6f4a34
 
 您只需要将`sizeElement.style.color`的值改为`#78082a`即可。
 
+## You
 
-#### You:
 已知此td标签文本中表示的是文件的大小，在前述基础上，增加条件：
 单位是GB且大小大于2GB
 
-#### ChatGPT:
+## ChatGPT
+
 好的，以下是修改后的脚本，满足您的要求：
 
 ```javascript
@@ -148,11 +147,12 @@ source: https://chat.openai.com/chat/1b8d5bce-83ae-4227-aff6-9b236b6f4a34
 
 这个脚本增加了一个条件判断，如果文件大小以`GB`为单位且大于2GB，那么才进行高亮。
 
+## You
 
-#### You:
 高亮改写逻辑改为对所在<tr>操作
 
-#### ChatGPT:
+## ChatGPT
+
 好的，以下是修改后的脚本，满足您的要求：
 
 ```javascript
