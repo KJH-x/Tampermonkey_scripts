@@ -2,8 +2,7 @@
 // @name         [NSLC] B站广告|推广|分享跟踪参数|移除
 // @namespace    http://tampermonkey.net/
 // @version      4.2
-// @description  在页面加载、评论加载等时候去除无聊的关键词超链接以及跟着的放大镜，在页面加载完成前后之后去除推广恼人小组件，在点击复制10ms后去除剪贴板的网址跟踪参数
-// @author       NappingSodion
+// @description  在页面加载、评论加载等时候去除无聊的关键词超链接以及跟着的放大镜，在页面加载完成几秒之后去除推广小组件，在点击复制10ms后去除剪贴板的网址跟踪参数
 // @match        *://*.bilibili.com/video/*
 // @grant        none
 // @author       NSLC
@@ -49,7 +48,8 @@
     // 匹配列表
     const loopBannedList = [
         ['i.icon.search-word', '[NSLC][B站][去除关键词搜索图标]'],
-        ['a.jump-link.search-word', '[NSLC][B站][去除关键词链接]']
+        ['a.jump-link.search-word', '[NSLC][B站][去除关键词链接]'],
+        ['a.jump-link.normal','[NSLC][B站][去除广告链接]' ]
     ];
     const OnceBannedList = [
         ['div.ad-floor-cover', '[NSLC][B站][去除推广广告]', true, 'A'],
@@ -62,6 +62,7 @@
         ['div.reply-notice','[NSLC][B站][去除评论区活动推广]'],
         ['a.loc-moveclip','[NSLC][B站][顶部滚动广告]'],
         ['a.download-client-trigger','[NSLC][B站][下载客户端]'],
+        ['activity-m-v1','[NSLC][B站][活动卡片]'],
     ];
 
     function cleanUp(mutationsList) {
